@@ -51,7 +51,7 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
-                router_1.RouterModule.forRoot(appRoutes)
+                router_1.RouterModule.forRoot(appRoutes, { useHash: true })
             ],
             providers: [can_deactivate_guard_service_1.CanDeactivateGuard],
             bootstrap: [app_component_1.AppComponent]
