@@ -1,0 +1,19 @@
+
+  <div class="row" style="margin-bottom: 5px; width: 700px;">
+    <div class="col-xs-12">
+      <a class="list-group-item clearfix">
+        <div class="pull-left">
+          
+          <h4 class="list-group-item-heading">{{todo.name}}</h4>
+          <h4 class="list-group-item-text">Planned due: {{todo.date}}</h4>
+          <h4 class="list-group-item-text" style="font-weight: bold; color: green;">Done on: {{todo.done | date : 'd MMMM y, h:mm a'}}</h4>
+         <p>{{todo.index}}</p>
+        </div>
+        <span class="pull-right">
+          <button class="btn btn-danger" style="margin-right: 5px;" type="button"
+          (click)="onDelete()"
+          >Delete</button>
+        </span>
+      </a>
+    </div>
+  </div>

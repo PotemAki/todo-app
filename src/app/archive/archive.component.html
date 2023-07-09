@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12">
+  </div>
+  <h4>Your Archive</h4>
+</div>
+<hr>
+<div style="display: flex; justify-content: center;">
+  <div class="row">
+    <div class="col-xs-6" style="width: 600px;">
+      <app-archive-list *ngFor="let item of todo; let i = index"
+      [todo]="item"
+      [index]="i"
+      ></app-archive-list>
+    </div>
+    <div class="col-xs-6">
+    </div>
+  </div>
+</div>

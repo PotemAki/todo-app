@@ -1,0 +1,46 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form>
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="name">Name</label>
+            <input name="name" id="name" class="form-control" [ngClass]="{incorrect: isIncorrect}" #todoNameInput
+            ngModel maxlength="40">
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="amount">Date</label>
+            <input type="date" id="date" class="form-control" #todoDateInput style="width: 150px;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success" style="margin-right: 5px;" type="button"
+            (click)="onAdd(todoNameInput, todoDateInput)">Add</button>
+            <button class="btn btn-primary" style="margin-right: 5px;" type="button"
+            (click)="onClear()">Clear</button>
+          </div>
+        </div>  
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-6" style="width: 500px;">
+      <app-list *ngFor="let item of todo; let i = index"
+      [todo]="item"
+      [index]="i"
+      ></app-list>
+    </div>
+    <div class="col-xs-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="message-container" *ngIf="changeSaved">
+    <span class="message">Saved!</span>
+  </div>
+  <div class="message-container2" *ngIf="isIncorrect">
+    <span class="message">Please provide a name!</span>
+  </div>
+</div>
