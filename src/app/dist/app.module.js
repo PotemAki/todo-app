@@ -9,7 +9,6 @@ exports.__esModule = true;
 exports.AppModule = void 0;
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var todo_component_1 = require("./todo/todo.component");
 var archive_component_1 = require("./archive/archive.component");
@@ -50,7 +49,6 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 platform_browser_1.BrowserModule,
-                app_routing_module_1.AppRoutingModule,
                 http_1.HttpClientModule,
                 forms_1.FormsModule,
                 router_1.RouterModule.forRoot(appRoutes)
