@@ -1,0 +1,19 @@
+.list-group-item{
+  transition: transform 0.3s;
+}
+.list-group-item:hover {
+  transform: translateY(-2px);
+}
+.btn {
+  transition: transform 0.3s;
+}
+.btn:hover {
+  transform: translateX(2px);
+
+}
+@media (max-width: 520px) {
+  .row{
+    width: 70%;
+    height: 200%;
+  }
+}

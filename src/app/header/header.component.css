@@ -1,3 +1,6 @@
-.navbar-default{
-  background-color: rgb(208, 240, 255);
+@media (max-width: 520px) {
+  .navbar{
+    
+  }
+  
 }

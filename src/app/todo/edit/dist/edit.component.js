@@ -25,8 +25,10 @@ var EditComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) {
             _this.id = +params['id'];
             _this.todo = _this.todoService.getToEdit(_this.id);
-            _this.todoName = _this.todo.name;
-            _this.todoDate = _this.todo.date;
+            if (_this.todo) {
+                _this.todoName = _this.todo.name;
+                _this.todoDate = _this.todo.date;
+            }
         });
         this.route.queryParams.subscribe(function (queryParams) {
             _this.allowEdit = queryParams['allowEdit'] === '1' ? true : false;
@@ -42,7 +44,9 @@ var EditComponent = /** @class */ (function () {
             }, 1000);
             return;
         }
-        this.todoService.onUpdateList(this.id, this.todoName, this.todoDate);
+        if (this.todo) {
+            this.todoService.onUpdateList(this.id, this.todoName, this.todoDate);
+        }
         this.changesSaved = true;
         this.router.navigate(['/todo'], { relativeTo: this.route });
     };
@@ -53,7 +57,9 @@ var EditComponent = /** @class */ (function () {
         if (!this.allowEdit) {
             return true;
         }
-        if ((this.todoName !== this.todo.name || this.todoDate !== this.todo.date) && !this.changesSaved) {
+        if (this.todo &&
+            (this.todoName !== this.todo.name || this.todoDate !== this.todo.date) &&
+            !this.changesSaved) {
             return confirm('Discard the changes?');
         }
         else {

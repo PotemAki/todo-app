@@ -22,7 +22,7 @@ export class TodoService {
       this.databaseFetch()
   
     }
-
+  
   getTodo() {
     return this.todo;
   }
